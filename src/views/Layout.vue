@@ -1,17 +1,17 @@
 <template>
-<el-container style="height:100%">
-  <el-aside width="200px">
-    <Aside />
-  </el-aside>
-  <el-container>
-    <el-header>
-      <Navbar />
-    </el-header>
-    <el-main>
-      <Main />
-    </el-main>
+  <el-container style="height:100%">
+    <el-aside width="auto">
+      <Aside />
+    </el-aside>
+    <el-container>
+      <el-header>
+        <Navbar :isCollapse="isCollapse" />
+      </el-header>
+      <el-main>
+        <Main />
+      </el-main>
+    </el-container>
   </el-container>
-</el-container>
 </template>
 
 <script>
@@ -20,6 +20,11 @@ import Main from "./components/Main";
 import Navbar from "./components/Navbar";
 export default {
   name: "layout",
+  data() {
+    return {
+      isCollapse: true,
+    };
+  },
   components: {
     Aside,
     Main,
@@ -38,11 +43,16 @@ export default {
   line-height: 60px;
 }
 
+.el-header {
+  padding: 0;
+}
+
 .el-aside {
   background-color: #d3dce6;
   color: #333;
   text-align: center;
   line-height: 200px;
+  height: 100%;
 }
 
 .el-main {
@@ -52,7 +62,7 @@ export default {
   line-height: 160px;
 }
 
-body>.el-container {
+body > .el-container {
   margin-bottom: 40px;
 }
 
