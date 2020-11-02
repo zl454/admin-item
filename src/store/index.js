@@ -1,13 +1,16 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import { routes } from "@/router/index"
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
     aside: {
-      isOpend: true
-    }
+      isOpend: false
+    },
+    routers: routes
   },
   mutations: {
     toggleAsideBtn(state) {

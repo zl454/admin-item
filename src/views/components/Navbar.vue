@@ -1,15 +1,15 @@
 <template>
-<div class="navbar-container">
-  <Hamburger :toggle="toggleAside" :isActive="aside.isOpend" />
-</div>
+  <div class="navbar-container">
+    <Hamburger
+      :toggle="toggleAside"
+      :isActive="aside.isOpend"
+    />
+  </div>
 </template>
 
 <script>
 import Hamburger from "components/Hamburger/index.vue";
-import {
-  mapState,
-  mapMutations
-} from "vuex";
+import { mapState, mapMutations } from "vuex";
 export default {
   data() {
     return {};
@@ -23,6 +23,7 @@ export default {
       this.toggleAsideBtn();
     },
   },
+  created() {},
   computed: {
     ...mapState(["aside"]),
   },
