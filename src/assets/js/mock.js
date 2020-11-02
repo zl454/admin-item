@@ -1,5 +1,6 @@
 //引入mockjs
 import Mock from 'mockjs'
+import { formatDate } from "@/utils/data.js"
 //使用mockjs模拟数据
 // Mock.mock('/\/api\/msdk\/proxy\/query_common_credit/', {
 //   "ret": 0,
@@ -23,3 +24,20 @@ export const dataSource = Mock.mock({
   }]
 })
 export const dataImg = Mock.mock('@dataImage("40x40", "pink")')
+
+function getDataArray(num) {
+  const arr = []
+  for (var i = 0; i < num; i++) {
+    let now = new Date() - i * 3600 * 1000 * 24
+    arr.push(formatDate(new Date(now), 'yyyy-MM-dd'))
+  }
+  return arr
+}
+const DataArray = getDataArray(15)
+export const DATA_FROM_BACKEND = Mock.mock({
+  columns: ['date', 'orderCount', 'orderAmount'],
+  'rows|15': [
+    { 'date|+1': DataArray, 'orderCount|10-100': 1, 'orderAmount|1-10000': 1 },
+  ]
+});
+console.log(DATA_FROM_BACKEND);

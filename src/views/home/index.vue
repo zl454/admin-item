@@ -1,38 +1,50 @@
 <template>
-<div class="home-container">
-  <div class="total-layout">
-    <el-row :gutter="20">
-      <el-col :span="6">
-        <MainMessage :src="src1" :msg="{title:'今日订单总数',num:'2000'}" />
-      </el-col>
-      <el-col :span="6">
-        <MainMessage :src="src2" :msg="{title:'今日订单总数',num:'2000'}" />
-      </el-col>
-      <el-col :span="6">
-        <MainMessage :src="src3" :msg="{title:'今日订单总数',num:'2000'}" />
-      </el-col>
-      <el-col :span="6">
-        <MainMessage :src="src3" :msg="{title:'今日订单总数',num:'4000'}" />
-      </el-col>
-    </el-row>
+  <div class="home-container">
+    <div class="total-layout">
+      <el-row :gutter="20">
+        <el-col :span="6">
+          <MainMessage
+            :src="src1"
+            :msg="{title:'今日订单总数',num:'2000'}"
+          />
+        </el-col>
+        <el-col :span="6">
+          <MainMessage
+            :src="src2"
+            :msg="{title:'今日订单总数',num:'2000'}"
+          />
+        </el-col>
+        <el-col :span="6">
+          <MainMessage
+            :src="src3"
+            :msg="{title:'今日订单总数',num:'2000'}"
+          />
+        </el-col>
+        <el-col :span="6">
+          <MainMessage
+            :src="src3"
+            :msg="{title:'今日订单总数',num:'4000'}"
+          />
+        </el-col>
+      </el-row>
+    </div>
+    <div class="un-handle-layout">
+      <UnhandleLayout />
+    </div>
+    <div class="overview-layout">
+      <el-row :gutter="20">
+        <el-col :span="12">
+          <ProductOverview />
+        </el-col>
+        <el-col :span="12">
+          <UserOverview />
+        </el-col>
+      </el-row>
+    </div>
+    <div class="statistics-layout">
+      <Statistics />
+    </div>
   </div>
-  <div class="un-handle-layout">
-    <UnhandleLayout />
-  </div>
-  <div class="overview-layout">
-    <el-row :gutter="20">
-      <el-col :span="12">
-        <ProductOverview />
-      </el-col>
-      <el-col :span="12">
-        <UserOverview />
-      </el-col>
-    </el-row>
-  </div>
-  <div class="statistics-layout">
-    <Statistics />
-  </div>
-</div>
 </template>
 
 <script>
