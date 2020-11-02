@@ -5,7 +5,7 @@
   </el-aside>
   <el-container>
     <el-header>
-      <Navbar />
+      <Header />
     </el-header>
     <el-main>
       <Main />
@@ -17,7 +17,7 @@
 <script>
 import Aside from "./components/Aside";
 import Main from "./components/Main";
-import Navbar from "./components/Navbar";
+import Header from "./components/Header";
 import {
   mapState
 } from "vuex";
@@ -29,7 +29,7 @@ export default {
   components: {
     Aside,
     Main,
-    Navbar,
+    Header,
   },
   computed: {
     ...mapState(["aside"]),
@@ -42,9 +42,7 @@ export default {
   background-color: #b3c0d1;
   color: #333;
   line-height: 60px;
-}
-
-.el-header {
+  width: 100%;
   padding: 0;
 }
 
