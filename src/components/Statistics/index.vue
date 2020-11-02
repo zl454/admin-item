@@ -55,6 +55,7 @@
 import {
   str2Date
 } from "@/utils/data.js";
+import VeLine from "v-charts/lib/line.common";
 const DATA_FROM_BACKEND = {
   columns: ["date", "orderCount", "orderAmount"],
   rows: [{
@@ -183,6 +184,9 @@ export default {
       loading: false,
       dataEmpty: false,
     };
+  },
+  components: {
+    VeLine,
   },
   created() {
     this.initOrderCountDate();
