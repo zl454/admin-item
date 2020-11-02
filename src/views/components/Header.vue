@@ -3,7 +3,7 @@
   <Hamburger class="hamburger" :toggle="toggleAside" :isActive="aside.isOpend" />
   <el-dropdown trigger="click" class="dropdown-menu">
     <span class="el-dropdown-link">
-      <img class="user-img" src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/timg.jpg" alt="">
+      <img class="user-img" :src="src" alt="">
       <i class="el-icon-arrow-down el-icon--right"></i>
     </span>
     <el-dropdown-menu slot="dropdown">
@@ -19,12 +19,17 @@
 <script>
 import Hamburger from "components/Hamburger/index.vue";
 import {
+  dataImg
+} from "@/assets/js/mock";
+import {
   mapState,
   mapMutations
 } from "vuex";
 export default {
   data() {
-    return {};
+    return {
+      src: dataImg,
+    };
   },
   components: {
     Hamburger,
@@ -56,10 +61,18 @@ export default {
 
 .dropdown-menu {
   float: right;
+  height: 60px;
+}
+
+.el-dropdown-link {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .user-img {
-  margin-top: 10px;
+  display: inline-block;
   width: 40px;
+  border-radius: 10px;
 }
 </style>
