@@ -1,17 +1,17 @@
 <template>
-  <el-container style="height:100%">
-    <el-aside width="auto">
-      <Aside />
-    </el-aside>
-    <el-container>
-      <el-header>
-        <Header />
-      </el-header>
-      <el-main>
-        <Main />
-      </el-main>
-    </el-container>
+<el-container style="height:100%">
+  <el-aside width="auto">
+    <Aside />
+  </el-aside>
+  <el-container>
+    <el-header>
+      <Header />
+    </el-header>
+    <el-main>
+      <Main />
+    </el-main>
   </el-container>
+</el-container>
 </template>
 
 <script>
@@ -19,7 +19,9 @@ import Aside from "./components/Aside";
 import Main from "./components/Main";
 import Header from "./components/Header";
 
-import { mapState } from "vuex";
+import {
+  mapState
+} from "vuex";
 export default {
   name: "layout",
   data() {
@@ -53,13 +55,13 @@ export default {
 }
 
 .el-main {
-  background-color: #e9eef3;
+  background-color: #ffffff;
   color: #333;
   text-align: center;
-  padding: 20px 20px 0;
+  padding: 20px 120px;
 }
 
-body > .el-container {
+body>.el-container {
   margin-bottom: 40px;
 }
 

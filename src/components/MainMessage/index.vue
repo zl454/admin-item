@@ -19,29 +19,31 @@ export default {
 
 <style lang="scss">
 .message-container {
+  height: 100px;
   background: pink;
   padding: 20px;
   overflow: hidden;
-  display: inline-block;
+  position: relative;
+  // min-width: 200px;
 
   >img {
-    float: left;
     width: 60px;
+    display: block;
+    position: relative;
   }
 
   >div {
-    float: left;
+    position: absolute;
+    top: 20px;
+    left: 80px;
     height: 60px;
     padding: 5px;
 
     >p {
       text-align: left;
+      white-space: nowrap;
       margin-top: 5px;
     }
-  }
-
-  &.message-container {
-    margin-right: 20px;
   }
 }
 </style>
