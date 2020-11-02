@@ -25,19 +25,34 @@ export const dataSource = Mock.mock({
 })
 export const dataImg = Mock.mock('@dataImage("40x40", "pink")')
 
-function getDataArray(num) {
+function getDataArray(start, days) {
   const arr = []
-  for (var i = 0; i < num; i++) {
-    let now = new Date() - i * 3600 * 1000 * 24
+  for (var i = 0; i < days; i++) {
+    let now = new Date(start).getTime() + i * 3600 * 1000 * 24
     arr.push(formatDate(new Date(now), 'yyyy-MM-dd'))
   }
   return arr
 }
-const DataArray = getDataArray(15)
-export const DATA_FROM_BACKEND = Mock.mock({
-  columns: ['date', 'orderCount', 'orderAmount'],
-  'rows|15': [
-    { 'date|+1': DataArray, 'orderCount|10-100': 1, 'orderAmount|1-10000': 1 },
-  ]
-});
-console.log(DATA_FROM_BACKEND);
+// const DataArray = getDataArray(15)
+// const DataArray = []
+// export const DATA_FROM_BACKEND = Mock.mock({
+//   columns: ['date', 'orderCount', 'orderAmount'],
+//   'rows|15': [
+//     { 'date|+1': DataArray, 'orderCount|10-100': 1, 'orderAmount|1-10000': 1 },
+//   ]
+// });
+
+
+function getdSource(start, end) {
+  let days = Math.round((new Date(end) - new Date(start)) / (3600 * 24 * 1000)) + 1
+  const array = getDataArray(start, days)
+  const getArray = Mock.mock({
+    columns: ['date', 'orderCount', 'orderAmount'],
+    'rows|15': [
+      { 'date|+1': array, 'orderCount|10-100': 1, 'orderAmount|1-10000': 1 },
+    ]
+  });
+  return getArray
+}
+
+console.log(getdSource('2020-10-28 12:00:00', '2020-11-2 2:00:00'));

@@ -57,7 +57,7 @@ import {
 } from "@/utils/data.js";
 import VeLine from "v-charts/lib/line.common";
 import {
-  DATA_FROM_BACKEND
+  getdSource
 } from "@/assets/js/mock";
 // const DATA_FROM_BACKEND = {
 //   columns: ["date", "orderCount", "orderAmount"],
