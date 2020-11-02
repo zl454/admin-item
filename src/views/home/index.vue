@@ -1,5 +1,5 @@
 <template>
-<div>Home</div>
+  <div>Home</div>
 </template>
 
 <script>
@@ -28,7 +28,7 @@
   line-height: 160px;
 }
 
-body>.el-container {
+body > .el-container {
   margin-bottom: 40px;
 }
 

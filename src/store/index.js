@@ -6,16 +6,16 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     aside: {
-      opend: true
+      isOpend: true
     }
   },
   mutations: {
+    toggleAsideBtn(state) {
+      state.aside.isOpend = !state.aside.isOpend
+    }
 
   },
   getters: {
-    isOpened(state) {
-      state.opend = !state.opend
-    }
   },
   actions: {
   },

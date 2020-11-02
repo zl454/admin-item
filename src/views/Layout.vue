@@ -1,45 +1,46 @@
 <template>
-  <el-container style="height:100%">
-    <el-aside width="auto">
-      <Aside />
-    </el-aside>
-    <el-container>
-      <el-header>
-        <Navbar :isCollapse="isCollapse" />
-      </el-header>
-      <el-main>
-        <Main />
-      </el-main>
-    </el-container>
+<el-container style="height:100%">
+  <el-aside width="auto">
+    <Aside />
+  </el-aside>
+  <el-container>
+    <el-header>
+      <Navbar />
+    </el-header>
+    <el-main>
+      <Main />
+    </el-main>
   </el-container>
+</el-container>
 </template>
 
 <script>
 import Aside from "./components/Aside";
 import Main from "./components/Main";
 import Navbar from "./components/Navbar";
+import {
+  mapState
+} from "vuex";
 export default {
   name: "layout",
   data() {
-    return {
-      isCollapse: true,
-    };
+    return {};
   },
   components: {
     Aside,
     Main,
     Navbar,
   },
-  computed: {},
+  computed: {
+    ...mapState(["aside"]),
+  },
 };
 </script>
 
 <style scoped>
-.el-header,
-.el-footer {
+.el-header {
   background-color: #b3c0d1;
   color: #333;
-  text-align: center;
   line-height: 60px;
 }
 
@@ -62,7 +63,7 @@ export default {
   line-height: 160px;
 }
 
-body > .el-container {
+body>.el-container {
   margin-bottom: 40px;
 }
 

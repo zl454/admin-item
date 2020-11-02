@@ -1,29 +1,37 @@
 <template>
 <div class="navbar-container">
-  <el-radio-group v-model="opend" style="margin-bottom: 20px;">
-    <el-radio-button :label="false">展开</el-radio-button>
-    <el-radio-button :label="true">收起</el-radio-button>
-  </el-radio-group>
+  <Hamburger :toggle="toggleAside" :isActive="aside.isOpend" />
 </div>
 </template>
 
 <script>
+import Hamburger from "components/Hamburger/index.vue";
 import {
-  mutations
+  mapState,
+  mapMutations
 } from "vuex";
 export default {
   data() {
-    return {
-      isCollapse: true,
-      ...mutations(["opend"]),
-    };
+    return {};
   },
-  computed: {},
+  components: {
+    Hamburger,
+  },
+  methods: {
+    ...mapMutations(["toggleAsideBtn"]),
+    toggleAside() {
+      this.toggleAsideBtn();
+    },
+  },
+  computed: {
+    ...mapState(["aside"]),
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .navbar-container {
+  margin-left: 20px;
   position: relative;
 }
 
